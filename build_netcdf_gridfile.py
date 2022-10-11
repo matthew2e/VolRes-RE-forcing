@@ -5,19 +5,25 @@ import time
 # User provides the eruption parameters below
 
 # Project name
-proj='DCPP'
+proj='VolRes-RE'
 
 # model name
-model='modX'
+model='modTBD'
 
-# wavelengths in SW and LW
+# wavelength bands in SW and LW, wl1 and wl2 specify the lower and upper bound of each band, respectively
 wl1_sw=[0.1, 0.3, 0.55, 0.75, 1.0, 2.0, 5.0]
-wl2_sw=[0.1, 0.3, 0.55, 0.75, 1.0, 2.0, 5.0]
+wl2_sw=[0.3, 0.55, 0.75, 1.0, 2.0, 5.0, 8.0]
 wl1_lw=[2.5, 4.0, 7.0, 10.3, 20]
-wl2_lw=[2.5, 4.0, 7.0, 10.3, 20]
+wl2_lw=[4.0, 7.0, 10.3, 20, 30]
 
 # latitudes
 lat=[-80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80]
+
+
+# -----------------------------------------------------------------------------
+# No further editing required below this point
+
+
 
 nlat= np.shape(lat)[0]
 nsw=np.shape(wl1_sw)[0]
