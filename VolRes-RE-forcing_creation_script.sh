@@ -10,15 +10,19 @@
 #    modify variable 'proj' below to match the project identifier of the pre-existing gridfile, e.g., 'CMIP6' or 'CMIP'
 # 3b. If no to 2:
 #    Adapt variables in 'build_netcdf_gridfile.py' python script to your model (model name, latitude array and wavelengths)
-#    Modify variable 'model' below to match what you have entered in 'build_netcdf_gridfile.py'
-#    uncomment the 'python build_netcdf_gridfile.py' line below
+#    Modify variable 'model' below to match what you have entered in 'build_netcdf_gridfile.py', and leave proj='VolRes-RE'
 # 4. Run this script
 # 5. EVA forcing files will be created in the format of the CMIP6 historical volcanic forcing files. Users will need to interpolate these files to the vertical grid of their model.
 
 proj='VolRes-RE'
-model='modTBD'
+model='CanESM'
 
-#python build_netcdf_gridfile.py
+if [[ "$proj" == 'VolRes-RE' ]]; then
+	echo 'building new gridfile'
+     	python build_netcdf_gridfile.py
+	cp ${proj}_${model}_gridfile.nc easy-volcanic-aerosol/gridfiles
+fi
+
 cp eva_namelist_VolRes-RE eva_namelist
 sed -i 's/projX/'${proj}'/g' eva_namelist
 sed -i 's/modX/'${model}'/g' eva_namelist
