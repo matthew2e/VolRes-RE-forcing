@@ -4,15 +4,23 @@
 
 # User steps
 # 1. Compile EVA
-# 2. Adapt variables in 'build_netcdf_gridfile.py' python script to your model (model name, latitude array and wavelengths)
-# 3. Modify variable "model" below to the same model name as used in the 'build_netcdf_gridfile.py' script
+# 2. Check the files in directory easy-volcanic-aerosol/gridfiles. Do you see a gridfile that matches your model, in terms of latitude resolution and wavelength bands? 
+# 3a. If yes to 2:
+#    modify variable 'model' below to match the full model name of the pre-existing gridfile, e.g., 'CanESM' or 'MIROC3.2_29'
+#    modify variable 'proj' below to match the project identifier of the pre-existing gridfile, e.g., 'CMIP6' or 'CMIP'
+# 3b. If no to 2:
+#    Adapt variables in 'build_netcdf_gridfile.py' python script to your model (model name, latitude array and wavelengths)
+#    Modify variable 'model' below to match what you have entered in 'build_netcdf_gridfile.py'
+#    uncomment the 'python build_netcdf_gridfile.py' line below
 # 4. Run this script
 # 5. EVA forcing files will be created in the format of the CMIP6 historical volcanic forcing files. Users will need to interpolate these files to the vertical grid of their model.
 
+proj='VolRes-RE'
 model='modTBD'
 
-python build_netcdf_gridfile.py
+#python build_netcdf_gridfile.py
 cp eva_namelist_VolRes-RE eva_namelist
+sed -i 's/projX/'${proj}'/g' eva_namelist
 sed -i 's/modX/'${model}'/g' eva_namelist
 cp eva_namelist easy-volcanic-aerosol/
 

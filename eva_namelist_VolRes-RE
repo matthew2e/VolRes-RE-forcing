@@ -10,14 +10,14 @@
 &aod_output_files
  aod_output_dir         = '.',
  aod_file_savename      = "eva_aod_VolRes-RE_modX",
- grid_filename          = "../VolRes-RE_modX_gridfile.nc",
+ grid_filename          = "../projX_modX_gridfile.nc",
  aod_start_year         = 2021,
  aod_end_year           = 2030
 /
 &forcing_output_files
  forcing_output_dir     = '.',
  forcing_file_savename  = "eva_forcing_VolRes-RE_modX",
- grid_filename          = "../VolRes-RE_modX_gridfile.nc",
+ grid_filename          = "../projX_modX_gridfile.nc",
  forcing_start_year     = 2021,
  forcing_end_year       = 2030
 /
