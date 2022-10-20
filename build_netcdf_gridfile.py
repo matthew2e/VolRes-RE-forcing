@@ -11,12 +11,15 @@ proj='VolRes-RE'
 model='modTBD'
 
 # wavelength bands in SW and LW, wl1 and wl2 specify the lower and upper bound of each band, respectively
+# wavelengths here in unit of micron (10**-6 m)
+# dummy values included here so scripts run without modification
 wl1_sw=[0.1, 0.3, 0.55, 0.75, 1.0, 2.0, 5.0]
 wl2_sw=[0.3, 0.55, 0.75, 1.0, 2.0, 5.0, 8.0]
 wl1_lw=[2.5, 4.0, 7.0, 10.3, 20]
 wl2_lw=[4.0, 7.0, 10.3, 20, 30]
 
-# latitudes
+# latitude array
+# dummy values inlcuded here so scripts run without modification
 lat=[-80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80]
 
 
